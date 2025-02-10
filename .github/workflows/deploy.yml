@@ -15,11 +15,11 @@ jobs:
       - name: Deploy to GitHub Pages
         run: |
           mkdir public
-          cp -r frontend/src/websites/* public/
-          touch public/.nojekyll
+          cp -r frontend/src/websites/* public/  # Mueve solo el contenido del frontend
+          touch public/.nojekyll  # Evita problemas con archivos que comienzan con "_"
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git checkout --orphan gh-pages
           git --work-tree=public add --all
           git commit -m "Deploy website"
-          git push origin gh-pages --force
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages --force
