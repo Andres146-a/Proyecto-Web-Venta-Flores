@@ -1,0 +1,223 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #D8BFD8, #E6E6FA);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #E75480, #FF69B4);
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.link {
+    text-decoration: none;
+    color: snow;
+    font-weight: 700;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.link:hover, .link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Contenedor del carrusel */
+.carousel-container {
+    width: 80%;
+    max-width: 1000px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+/* Carrusel */
+.carousel {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cajas de imágenes */
+.image-box {
+    min-width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* Efecto al pasar el cursor */
+.image-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones de navegación */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.2);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 100%;
+    }
+
+    .image-box {
+        min-width: 250px;
+        height: 180px;
+    }
+
+    .prev, .next {
+        padding: 10px;
+        font-size: 18px;
+    }
+}
+
+/* Estilos para el contenido de texto */
+.content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 2.5em;
+    color: #E75480;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.content h3 {
+    font-size: 1.8em;
+    color: #FF69B4;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.content p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos para resaltar el último párrafo */
+.content p:last-child {
+    font-weight: 600;
+    color: #E75480;
+}
+
+/* Estilos para mejorar la legibilidad en dispositivos móviles */
+@media (max-width: 768px) {
+    .content {
+        padding: 15px;
+        margin: 20px 10px;
+    }
+
+    .content h2 {
+        font-size: 2em;
+    }
+
+    .content h3 {
+        font-size: 1.5em;
+    }
+
+    .content p {
+        font-size: 1em;
+    }
+}
+/* Estilos para las imágenes dentro de las cajas */
+.image-box img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: 100%; /* La imagen ocupa todo el alto del contenedor */
+    object-fit: cover; /* Ajusta la imagen para cubrir el espacio sin distorsionarse */
+    border-radius: 15px; /* Bordes redondeados */
+}
+
+/* Estilos para los enlaces */
+.image-box a {
+    display: block; /* Hace que el enlace ocupe todo el espacio del contenedor */
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* Quita el subrayado del enlace */
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Tienda Mi Rosita 🌹</title>
+    <link rel="stylesheet" href="../Css/catalogo.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul class="list">
+            <li><a href="./index.html" class="link">Home</a></li>
+            <li><a href="#" class="link active">Catálogo</a></li>
+            <li><a href="./Contacto.html" class="link">Contacto</a></li>
+        </ul>
+    </div>
+    
+    <div class="header-content">
+        <h1>Catálogo de productos</h1>
+        <p>Encuentra una amplia variedad de productos de calidad en nuestra tienda online.</p>
+        <p>¡Compra ahora y disfruta de una experiencia de compra excepcional!</p>
+    </div>
+
+    <div class="catalog-container">
+        <!-- Categorías de productos -->
+        <div class="category">
+            <div class="category-box">
+                <h2>Flores</h2>
+                <img src="../img/Img1.jpg" alt="Flores">
+            </div>
+            <button class="category-btn" onclick="redirectToProducts('flores')">Ver Productos</button>
+        </div>
+
+        <div class="category">
+            <div class="category-box">
+                <h2>Vasos</h2>
+                <img src="../img/Img2.jpg" alt="">
+            </div>
+            <button class="category-btn" onclick="redirectToProducts('vasos')">Ver Productos</button>
+        </div>
+
+        <div class="category">
+            <div class="category-box">
+                <h2>Libretas</h2>
+                <img src="../img/Img3.jpg" alt="">
+            </div>
+            <button class="category-btn" onclick="redirectToProducts('libretas')">Ver Productos</button>
+        </div>
+
+        <div class="category">
+            <div class="category-box">
+                <h2>Cajas</h2>
+                <img src="../img/Img4.jpg" alt="">
+            </div>
+            <button class="category-btn" onclick="redirectToProducts('cajas')">Ver Productos</button>
+        </div>
+
+        <div class="category">
+            <div class="category-box">
+                <h2>Personalizado</h2>
+                <img src="../img/Img5.jpg" alt="">
+            </div>
+            <button class="category-btn" onclick="redirectToProducts('personalizado')">Ver Productos</button>
+        </div>
+    </div>
+
+    <script src="../js/catalogo.js"></script>
+</body>
+</html>

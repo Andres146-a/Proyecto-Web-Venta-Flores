@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Tienda Mi Rosita 🌹</title>
+    <link rel="stylesheet" href="../Css/productos.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul class="list">
+            <li><a href="./index.html" class="link">Home</a></li>
+            <li><a href="./Catalogo.html" class="link">Catálogo</a></li>
+            <li><a href="./Contacto.html" class="link">Contacto</a></li>
+        </ul>
+    </div>
+
+    <div class="header-content">
+        <h1 id="category-title">Productos de la categoría</h1>
+        <p>Selecciona un producto para ver más detalles.</p>
+    </div>
+
+    <div class="content" id="product-container">
+        <!-- Aquí se cargarán los productos dinámicamente -->
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p id="modal-price"></p>
+            <button class="buy-btn">Comprar</button>
+        </div>
+    </div>
+
+    <script src="../js/productos.js"></script>
+</body>
+</html>
