@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id          Int       @id @default(autoincrement())
+  nombre      String
+  telefono    String    @unique
+  email       String?   @unique
+  pedidos     Pedido[]
+}
+
+model Categoria {
+  id          Int       @id @default(autoincrement())
+  nombre      String    @unique
+  productos   Producto[]
+}
+
+model Producto {
+  id          Int       @id @default(autoincrement())
+  nombre      String
+  precio      Float
+  imagen      String
+  categoriaId Int
+  categoria   Categoria @relation(fields: [categoriaId], references: [id])
+  detallesPedido DetallePedido[]
+}
+
+model Pedido {
+  id          Int       @id @default(autoincrement())
+  usuarioId   Int
+  usuario     Usuario   @relation(fields: [usuarioId], references: [id])
+  fecha       DateTime  @default(now())
+  total       Float
+  detalles    DetallePedido[]
+  mensajeWhatsApp MensajeWhatsApp?
+}
+
+model DetallePedido {
+  id          Int       @id @default(autoincrement())
+  pedidoId    Int
+  productoId  Int
+  cantidad    Int
+  precioUnitario Float
+  pedido      Pedido    @relation(fields: [pedidoId], references: [id])
+  producto    Producto  @relation(fields: [productoId], references: [id])
+}
+
+model MensajeWhatsApp {
+  id          Int       @id @default(autoincrement())
+  pedidoId    Int       @unique  // Agregar @unique aquí
+  pedido      Pedido    @relation(fields: [pedidoId], references: [id])
+  mensaje     String
+  fechaEnvio  DateTime  @default(now())
+}
+
